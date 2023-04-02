@@ -1,5 +1,7 @@
 import React from 'react'
 import './searchbar.css';
+import { Link } from 'react-router-dom';
+
 export const Searchbar = () => {
   return (
     <div className='searchbar'>
@@ -7,7 +9,9 @@ export const Searchbar = () => {
         < input placeholder='Recherche....'/>
     </div>
     <div class="btn-field"> 
-    <button type='button'>Ajouter emplyé</button>
+       <Link to='/Registration'>
+        <button type='button'>Ajouter employé</button>
+      </Link>
     </div>
     </div>
   )
