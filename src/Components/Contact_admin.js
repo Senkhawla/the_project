@@ -1,14 +1,14 @@
 import React from 'react'
 import './Contact_admin.css'
 import logoesi from '../assets/img/logoesi.png';
-import Navbar from './Navbar';
+import Navbar2 from './Navbar2';
 
 function Contact_admin() {
   
   return (
     <div className='Contact_admin'>
 
-       <Navbar/>
+       <Navbar2/>
 
    <div>
     <p className='cher-visiteur'> Cher visiteurs,</p>

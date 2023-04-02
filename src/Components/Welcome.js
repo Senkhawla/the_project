@@ -43,23 +43,8 @@ function Welcome() {
        <nav className="navbar">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a href="#" className="nav-link">
+          <a href="/Home" className="nav-link">
             Home
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="#" className="nav-link">
-            Annances
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="#" className="nav-link">
-            Programs
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="#" className="nav-link">
-            Contact
           </a>
         </li>
       </ul>
