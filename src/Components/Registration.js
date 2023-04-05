@@ -18,6 +18,7 @@ function Registration() {
     const reader = new FileReader();
     reader.onloadend = () => {
       setImage(reader.result);
+      setFieldValue('profile_image_url', reader.result); // update profile_image_url field in the formik values object
     };
     reader.readAsDataURL(file);
   };
