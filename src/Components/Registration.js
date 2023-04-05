@@ -11,7 +11,7 @@ function Registration() {
 
   const [bitmask, setBitmask] = useState(0);
   const [theRole, setTheRole] = useState("");
-  const [image, setImage] = useState("https://www.sumasmountaindental.com/wp-content/uploads/2020/10/person-placeholder.jpg");
+  const [profile_image_url, setProfile_image_url] = useState("https://www.sumasmountaindental.com/wp-content/uploads/2020/10/person-placeholder.jpg");
 
   /*const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -108,7 +108,7 @@ function Registration() {
       grade : values.grade,
       maritalStatus : values.maritalStatus ,
       name : values.name,
-      profile_image_url :image,
+      profile_image_url :profile_image_url,
     })
     .then(response => {
       console.log(response.data);
@@ -130,7 +130,7 @@ function Registration() {
         <h2 className='main-title'>AJOUTER EMPLOYE :</h2>
 
         <div className="form-group-col">
-      <img src={image} alt="" className="picture" />
+      <img src={profile_image_url} alt="" className="picture" />
        <div className="changer-photo">
        </div>
     </div>
