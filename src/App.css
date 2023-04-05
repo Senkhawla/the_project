@@ -183,6 +183,7 @@ buutton[type="submit"]:hover {
 }
 
 .container {
+  font-family: 'Bahnschrift';
   display: flex;
   justify-content: space-between;
 }

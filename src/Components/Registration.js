@@ -237,6 +237,15 @@ function Registration() {
 
 
       </form>
+
+      {errors.length > 0 && (
+        <ul className="error-list">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+      )}
+
     </div>
   )}
   export default Registration;
