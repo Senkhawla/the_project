@@ -84,7 +84,7 @@ function Registration() {
   const navigate = useNavigate()
 
   const {values ,handleBlur, errors ,handleChange , handleSubmit  }= useFormik({
-      initialValues : {email : "" , password : "" , confirmPassword : "" ,role:"",job:"",grade:"",maritalStatus:"",name:"" } , 
+      initialValues : {email : "" , password : "" , confirmPassword : "" ,role:"",job:"",grade:"",maritalStatus:"",name:"", profile_image_url:"" } , 
       validationSchema:yup.object().shape(
         {
           email:yup.string().email().required() ,
@@ -93,6 +93,7 @@ function Registration() {
           job:yup.string().required(),
           role:yup.string().required(),
           grade:yup.string(),
+          profile_image_url:yup.string(),
           maritalStatus:yup.string().required(),
           name:yup.string().required()
     
@@ -106,7 +107,7 @@ function Registration() {
       grade : values.grade,
       maritalStatus : values.maritalStatus ,
       name : values.name,
-      profile_image_url :image,
+      profile_image_url :values.profile_image_url,
     })
     .then(response => {
       console.log(response.data);
@@ -129,7 +130,7 @@ function Registration() {
         <div className="form-group-col">
       <img src={image} alt="" className="picture" />
       <div className="changer-photo">
-        <input className='upload-picture' id="file-upload" type="file" accept="image/*" onChange={handleImageChange} />
+        <input className='upload-picture' id="file-upload" type="file" accept="image/*" value={values.profile_image_url} onChange={handleImageChange} />
       </div>
     </div>
       
