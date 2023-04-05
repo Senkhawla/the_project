@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from './Components/Sidebar';
-import Registration from './Components/Registration';
+import RegistrationRegistration from './Components/RegistrationRegistration';
 import Modifier_Info from './Components/Modifier_Info';
 import Welcome from './Components/Welcome';
 import Annances from './Components/annances';
@@ -19,11 +19,8 @@ const routes = [
     element: (
       <div className="App">
         <div className="container">
-          <Sidebar/> 
-          <div className="margin">
-            <Registration/>
-          </div>
-        </div>
+           <RegistrationRegistration/>
+         </div>
       </div>
     )
   },

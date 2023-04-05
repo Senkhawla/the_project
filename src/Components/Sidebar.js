@@ -2,10 +2,10 @@ import React from 'react'
 import "../App.css"
 import {SidebarData} from './SidebarData'
 import {User} from './User'
-import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
  
 function Sidebar() {
-
+  const navigate = useNavigate();
   return (
    <div className='Sidebar'>
    <div className="logo">
@@ -35,10 +35,11 @@ function Sidebar() {
       )
     })}
     </ul>
-     
-    < Link  to='/Home'>
-    <button type="submit"className='button-logout'>Log out</button>
-    </Link>
+
+
+    <button type="submit" className='button-logout'  onClick={()=>{localStorage.removeItem('token');localStorage.removeItem('id') ;navigate('/Login');} }>
+        Log out</button>
+
     <button type="submit"className='button-switch'>Switch to employee</button>
     
     </div>
