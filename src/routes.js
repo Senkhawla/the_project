@@ -26,6 +26,19 @@ const routes = [
     )
   },
 
+  {
+    path: "/Registrationn",
+    element: (
+      <div>
+      <div className="container">
+        <Sidebar/> 
+        <div className="margin">
+          <Registration/>
+        </div>
+      </div>
+  </div>
+    )
+  },
  
   {
     path: "/Modifier_Info",

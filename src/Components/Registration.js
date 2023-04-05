@@ -13,7 +13,7 @@ function Registration() {
   const [theRole, setTheRole] = useState("");
   const [image, setImage] = useState("https://www.sumasmountaindental.com/wp-content/uploads/2020/10/person-placeholder.jpg");
 
-  const handleImageChange = (e) => {
+  /*const handleImageChange = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {
@@ -21,7 +21,7 @@ function Registration() {
       setFieldValue('profile_image_url', reader.result); // update profile_image_url field in the formik values object
     };
     reader.readAsDataURL(file);
-  };
+  }; */
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
@@ -108,7 +108,7 @@ function Registration() {
       grade : values.grade,
       maritalStatus : values.maritalStatus ,
       name : values.name,
-      profile_image_url :values.profile_image_url,
+      profile_image_url :image,
     })
     .then(response => {
       console.log(response.data);
@@ -120,7 +120,8 @@ function Registration() {
     } }); 
 
 
-
+  /* <input className='upload-picture' id="file-upload" type="file" accept="image/*" value={values.profile_image_url} onChange={handleImageChange}/>*/ 
+    
 
   return (
     <div className="form-container">
@@ -130,9 +131,8 @@ function Registration() {
 
         <div className="form-group-col">
       <img src={image} alt="" className="picture" />
-      <div className="changer-photo">
-        <input className='upload-picture' id="file-upload" type="file" accept="image/*" value={values.profile_image_url} onChange={handleImageChange} />
-      </div>
+       <div className="changer-photo">
+       </div>
     </div>
       
 
