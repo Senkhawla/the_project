@@ -8,88 +8,115 @@ import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 function Registration() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [job, setJob] = useState('');
-  const [grade, setGrade] = useState('');
-  const [situation, setSituation] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [responsabilite, setResponsabilite] = useState({
-    admin: false,
-    responsable: false,
-    comptable: false,
-    funder: false,
-  });
-  const [responsibilities, setResponsibilities] = useState(0);
 
-  const RESPONSIBILITIES = {
-    ADMIN: 0b0000,
-    EMPLOYEE: 0b0001,
-    HR_MANAGER: 0b0010,
-    ACCOUNTANT: 0b0100,
-    FUNDER: 0b1000
-  }
+  const [bitmask, setBitmask] = useState(0);
+  const [theRole, setTheRole] = useState("");
+  const [image, setImage] = useState("https://www.sumasmountaindental.com/wp-content/uploads/2020/10/person-placeholder.jpg");
 
-  const handleResponsabiliteChange = (e) => {
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
-    let mask = 0;
-    if (name === 'admin' && checked) {
-      mask |= RESPONSIBILITIES.ADMIN;
+  
+    let mask = bitmask;
+  
+    switch (name) {
+      case 'employee':
+        if (checked) {
+          mask |= 0b0001;
+        } else {
+          mask &= ~0b0001;
+        }
+        break;
+      case 'responsable':
+        if (checked) {
+          mask |= 0b0010;
+        } else {
+          mask &= ~0b0010;
+        }
+        break;
+      case 'funder':
+        if (checked) {
+          mask |= 0b0100;
+        } else {
+          mask &= ~0b0100;
+        }
+        break;
+      case 'comptable':
+        if (checked) {
+          mask |= 0b1000;
+        } else {
+          mask &= ~0b1000;
+        }
+        break;
+      default:
+        break;
     }
-    if (name === 'employee' && checked) {
-      mask |= RESPONSIBILITIES.EMPLOYEE;
-    }
-    if (name === 'hrManager' && checked) {
-      mask |= RESPONSIBILITIES.HR_MANAGER;
-    }
-    if (name === 'accountant' && checked) {
-      mask |= RESPONSIBILITIES.ACCOUNTANT;
-    }
-    if (name === 'funder' && checked) {
-      mask |= RESPONSIBILITIES.FUNDER;
-    }
-    setResponsibilities(mask);
+  
+    setBitmask(mask);
+
+    setTheRole(mask.toString(2).padStart(4, '0'));
+    console.log(theRole)
+
   };
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   const navigate = useNavigate()
-  var employeeCheckbox = document.getElementById("employee-checkbox");
-  var otherRoleCheckbox = document.getElementById("other-role-checkbox");
-    
-  const {values ,handleBlur, handleChange , handleSubmit  }= useFormik({
+
+  const {values ,handleBlur, errors ,handleChange , handleSubmit  }= useFormik({
       initialValues : {email : "" , password : "" , confirmPassword : "" ,role:"",job:"",grade:"",maritalStatus:"",name:"" } , 
       validationSchema:yup.object().shape(
         {
           email:yup.string().email().required() ,
           password:yup.string().min(6).required() ,
           confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
-          role: yup.string().required().matches(/^[0-9]+$/, "Must be only digits").min(4, 'Must be exactly 5 digits').max(4, 'Must be exactly 5 digits'),
-          job:yup.string(),
+          job:yup.string().required(),
+          role:yup.string().required(),
           grade:yup.string(),
-          maritalStatus:yup.string(),
-          name:yup.string()
+          maritalStatus:yup.string().required(),
+          name:yup.string().required()
     
         })
     , onSubmit : (values)=>{
       axios.post('https://server-social-benefits.vercel.app/signup', {
       email: values.email,
       password: values.password ,
-      role :  responsibilities ,
+      role : theRole ,
       job:values.job,
       grade : values.grade,
       maritalStatus : values.maritalStatus ,
-      name : values.name
+      name : values.name,
+      profile_image_url :image,
     })
     .then(response => {
       console.log(response.data);
-      navigate('/home')
+      
     })
     .catch(error => {
       console.error(error.response.data);
     });
     } }); 
+
 
 
 
@@ -100,15 +127,11 @@ function Registration() {
         <h2 className='main-title'>AJOUTER EMPLOYE :</h2>
 
         <div className="form-group-col">
-        {User.map((val, key)=> {
-         return(
-        <div key={key} > {" "}
-          <img src={val.picture} alt="" className="picture" />
-          <div className="changer-photo"> Changer photo </div>
-        </div>  
-          )
-         })}
+      <img src={image} alt="" className="picture" />
+      <div className="changer-photo">
+        <input className='upload-picture' id="file-upload" type="file" accept="image/*" onChange={handleImageChange} />
       </div>
+    </div>
       
 
         <div className="form-group-row">
@@ -169,7 +192,7 @@ function Registration() {
     <div className="group">
         <div className="form-group">
           <label htmlFor="situation">Situation:</label>
-          <select id="situation" className='input' value={values.maritalStatus} 
+          <select id="maritalStatus" className='input' value={values.maritalStatus} 
             onBlur={handleBlur}  placeholder="maritalStatus"
               onChange={handleChange}>
             <option value="">-- Select Situation --</option>
@@ -180,26 +203,26 @@ function Registration() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="responsabilite">Responsabilité:</label>
+          <label htmlFor="responsabilite">Roles:</label>
           <div className="checkbox-group">
           <label>
-              <input type="checkbox" name="employee" checked={!!(responsibilities & RESPONSIBILITIES.EMPLOYEE)} onChange={handleResponsabiliteChange} />
+              <input type="checkbox" name="employee" onChange={handleCheckboxChange}   />
               Acune
             </label>
             <label>
-              <input type="checkbox" name="admin" checked={!!(responsibilities & RESPONSIBILITIES.ADMIN)} onChange={handleResponsabiliteChange} />
+              <input type="checkbox" name="admin" onChange={handleCheckboxChange}   />
               Admin
             </label>
             <label>
-              <input type="checkbox" name="responsable" checked={!!(responsibilities & RESPONSIBILITIES.HR_MANAGER)} onChange={handleResponsabiliteChange} />
+              <input type="checkbox" name="responsable" onChange={handleCheckboxChange} />
               Responsable des oeuvres sociales
             </label>
             <label>
-              <input type="checkbox" name="funder" checked={!!(responsibilities & RESPONSIBILITIES.FUNDER)} onChange={handleResponsabiliteChange} />
+              <input type="checkbox" name="funder"  onChange={handleCheckboxChange} />
               Funder
             </label>
             <label>
-              <input type="checkbox" name="comptable" checked={!!(responsibilities & RESPONSIBILITIES.ACCOUNTANT)} onChange={handleResponsabiliteChange} />
+              <input type="checkbox" name="comptable" onChange={handleCheckboxChange}  />
               Comptable
             </label>
 
@@ -207,9 +230,9 @@ function Registration() {
         </div>
         </div>  
         
-        <button type="submit" className='button-annuler'>Annuler</button>
+        <button  className='button-annuler'>Annuler</button>
         
-        <button type="submit"className='button-ajouter'>Ajouter</button>
+        <button onClick={console.log(errors)} type="submit"className='button-ajouter'>Ajouter</button>
         
 
 

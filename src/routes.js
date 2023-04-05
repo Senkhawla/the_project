@@ -11,6 +11,7 @@ import Hero from './Components/hero';
 import Contact_admin from './Components/Contact_admin';
 import Afficher_employees from './Components/Afficher_employees';
 import {Link} from 'react-router-dom';
+import Registration from './Components/Registration';
 
 
 const routes = [
