@@ -11,8 +11,6 @@ function Registration() {
 
   const [bitmask, setBitmask] = useState(0);
   const [theRole, setTheRole] = useState("");
-  const [profile_image_url, setProfile_image_url] = useState("https://www.sumasmountaindental.com/wp-content/uploads/2020/10/person-placeholder.jpg");
-
 
   useEffect(() => {
     console.log(theRole);
@@ -121,11 +119,16 @@ console.log(mask.toString(2).padStart(4, '0'))
 
         <h2 className='main-title'>AJOUTER EMPLOYE :</h2>
 
-       <div className="form-group-col">
-        <img src={profile_image_url} alt="" className="picture" />
-        <div className="changer-photo">
-        </div>
-       </div>
+        <div className="form-group-col">
+        {User.map((val, key)=> {
+         return(
+        <div key={key} > {" "}
+          <img src={val.picture} alt="" className="picture" />
+          <div className="changer-photo"> Changer photo </div>
+        </div>  
+          )
+         })}
+      </div>
       
 
         <div className="form-group-row">
@@ -231,14 +234,15 @@ console.log(mask.toString(2).padStart(4, '0'))
 
 
       {errors.length > 0 && (
-        <ul className="error-list">
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-      )}
+    <ul className="error-list">
+      {errors.map((error) => (
+        <li key={error}>{error}</li>
+      ))}
+    </ul>
+  )}
 
-
+  
     </div>
   )}
   export default Registration;
+
