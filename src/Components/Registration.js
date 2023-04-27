@@ -231,18 +231,6 @@ console.log(mask.toString(2).padStart(4, '0'))
 
 
       </form>
-
-
-      {errors.length > 0 && (
-    <ul className="error-list">
-      {errors.map((error) => (
-        <li key={error}>{error}</li>
-      ))}
-    </ul>
-  )}
-
-  
     </div>
   )}
   export default Registration;
-
