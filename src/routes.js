@@ -12,10 +12,39 @@ import Contact_admin from './Components/Contact_admin';
 import Afficher_employees from './Components/Afficher_employees';
 import Employee_annonces_programmes from './Components/Employee_annonces_programmes';
 import Registration from './Components/Registration';
+import Email_modifier_mp from './Components/Email_modifier_mp';
+import Envoyer_lien_mp from './Components/Envoyer_lien_mp';
+import Nouveau_mp from './Components/Nouveau_mp';
 
 
 const routes = [
 
+  {
+    path: "/Nouveau_mp",
+    element: (
+      <div>
+          <Nouveau_mp/>
+     </div>
+    )
+  },
+
+  {
+    path: "/Envoyer_lien_mp",
+    element: (
+      <div>
+          <Envoyer_lien_mp/>
+     </div>
+    )
+  },
+
+  {
+    path: "/Email_modifier_mp",
+    element: (
+      <div>
+          <Email_modifier_mp/>
+     </div>
+    )
+  },
 
   {
     path: "/Employee_annonces_programmes",

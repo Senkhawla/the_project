@@ -1,0 +1,138 @@
+.Envoyer_lien_mp .oubliée a{
+    margin-left: 75px;
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+    color: #FF3548;
+    }
+    
+    .Envoyer_lien_mp .navbar-modifier {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:transparent;
+      padding: 10px 20px;
+      position: absolute;
+      top: 15px;
+      left: 1100px;
+      right: 0;
+      z-index: 50;
+     }
+    
+     .Envoyer_lien_mp .navbar-modifier ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      
+    }
+    
+    .Envoyer_lien_mp  .navbar ul li {
+      margin: 0 10px;
+    }
+    
+    .Envoyer_lien_mp .navbar-modifier ul li a {
+      font-family: Poppins;
+      font-style:Poppins-Bold ;
+      font-size: 25px;
+      font-weight: 400;
+    line-height: 24px;
+      text-decoration: none;
+      color:white;
+      transition: .3s;
+    }
+    
+    .Envoyer_lien_mp .navbar-modifier ul li a:hover {
+      color:#FF3548;
+    }
+    
+    .Envoyer_lien_mp .modifier-h h1 {
+        position: absolute;
+        width: 500px;
+        height: 87px;
+        left: 70px;
+        top: 115px;
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 38px;
+        line-height: 55px;
+        /* or 138% */
+        text-align: center;
+        color: #0B59A1;
+    }
+    
+    .Envoyer_lien_mp .modifier-h h2{
+      position: absolute;
+    width: 498px;
+    height: 81px;
+    left: 65px;
+    top: 320px;
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    /* or 124% */
+    text-align: center;
+    color:#2C435A;
+    }
+     
+   
+    .Envoyer_lien_mp .btn_renvoyer_lien button{
+        box-sizing: border-box;
+        position: absolute;
+        width: 200px;
+        height: 60px;
+        left: 220px;
+        top: 490px;
+        border: 1px solid #FF3548;
+        border-radius: 6px;
+        color: #FF3548;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        background:white ;
+      
+        font-family: Poppins;
+        font-style:Poppins-Bold ;
+        cursor: pointer;
+        transition: background 1s;
+       }
+       .Envoyer_lien_mp .btn_renvoyer_lien button :hover {
+        background-color: #193047;
+       }
+       .Envoyer_lien_mp .logoesi img{
+        position: absolute;
+        width: 60px;
+  height: 60px;
+  left: 20px;
+  top: 20px; 
+      }
+      
+      .Envoyer_lien_mp .banner img {
+        position: absolute;
+        width: 650px;
+        height: 832px;
+        left: 640px;
+        top: 0px;
+         
+      }
+      .Envoyer_lien_mp .overlay img {
+        position: absolute;
+        width: 650px;
+        height: 832px;
+        left: 640px;
+        top: 0px;
+      }
+      .Envoyer_lien_mp  body {
+        overflow: hidden;
+      }
+        
+      
+    

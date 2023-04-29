@@ -89,10 +89,7 @@ ul {
   justify-content: center;
   margin-bottom: 10px;
   color: #FFF;
-<<<<<<< HEAD
   cursor: pointer;
-=======
->>>>>>> dc8a9ddb4c48f01a41e25912d07d51474cd64a21
 }
 
 .form-group-col {
@@ -104,11 +101,6 @@ ul {
 .form-group-col .changer-photo {
   color: #0B59A1;
   margin-top: 35px;
-<<<<<<< HEAD
-  
-=======
-  margin-left: 100px;
->>>>>>> dc8a9ddb4c48f01a41e25912d07d51474cd64a21
 }
 
 .form-group-col .picture {
@@ -210,10 +202,7 @@ buutton[type="submit"]:hover {
   border-radius: 4px;
   font-weight: bold;
   color: #fff;
-<<<<<<< HEAD
   cursor: pointer;
-=======
->>>>>>> dc8a9ddb4c48f01a41e25912d07d51474cd64a21
 }
 
 .button-switch[type="submit"]{
@@ -227,10 +216,7 @@ buutton[type="submit"]:hover {
   border-radius: 4px;
   font-weight: bold;
   border: none;
-<<<<<<< HEAD
   cursor: pointer;
-=======
->>>>>>> dc8a9ddb4c48f01a41e25912d07d51474cd64a21
 }
 
 .button-annuler{
@@ -247,10 +233,7 @@ buutton[type="submit"]:hover {
   border-radius: 4px;
   font-weight: bold;
   color: #FF3548;
-<<<<<<< HEAD
   cursor: pointer;
-=======
->>>>>>> dc8a9ddb4c48f01a41e25912d07d51474cd64a21
 }
 
 .button-ajouter[type="submit"]{

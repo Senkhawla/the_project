@@ -52,7 +52,7 @@ function Welcome() {
       <input  type="password" onBlur={handleBlur} placeholder="password"  name="password" id="password"   value={values.password} onChange={handleChange}/>
       </div>
        </div>
-       
+       <div className='mp_oublié'><p><a href='/Email_modifier_mp'>Mot de passe oubliée?</a> </p></div>
        <div className='contactadmin' ><p> Don't have an account ? <a href='/Contact_admin' /*onClick ={()=>setIsAuth(false)}*/>Contact Admin</a> </p></div>
        
        

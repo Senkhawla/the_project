@@ -1,0 +1,155 @@
+.Nouveau_mp .logoesi img{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 20px;
+    top: 20px; 
+  }
+  
+  .Nouveau_mp .banner img {
+    position: absolute;
+    width: 650px;
+    height: 832px;
+    left: 640px;
+    top: 0px;
+     
+  }
+  .Nouveau_mp .overlay img {
+    position: absolute;
+    width: 650px;
+    height: 832px;
+    left: 640px;
+    top: 0px;
+  }
+  .Nouveau_mp body {
+    overflow: hidden;
+  }
+  .Nouveau_mp .navbar_nouveau_mp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:transparent;
+    padding: 10px 20px;
+    position: absolute;
+    top: 15px;
+    left: 1100px;
+    right: 0;
+    z-index: 50;
+   }
+  
+   .Nouveau_mp .navbar_nouveau_mp ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .Nouveau_mp .navbar_nouveau_mp ul li {
+    margin: 0 10px;
+  }
+  .Nouveau_mp .navbar_nouveau_mp ul li a {
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    font-size: 25px;
+    font-weight: 400;
+  line-height: 24px;
+    text-decoration: none;
+    color:white;
+    transition: .3s;
+  }
+  .Nouveau_mp .navbar_nouveau_mp ul li a:hover {
+    color:#FF3548;
+  }
+  .Nouveau_mp h1 {
+    position: absolute;
+    width: 515px;
+    height: 87px;
+    left: 62px;
+    top: 90px;
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 55px;
+    /* or 138% */
+    text-align: center;
+    color: #0B59A1;
+}
+.Nouveau_mp h2{
+    position:absolute;
+    left: 75px;
+    top: 245px;
+    margin-bottom: 5px;
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    font-weight :350px;;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2C435A;
+    }
+    .Nouveau_mp h3{
+      position:absolute;
+      left: 75px;
+      top:350px;
+      margin-bottom: 5px;
+      font-family: 'Bahnschrift';
+    font-style: normal;
+      font-weight: 350px;;
+      font-size: 20px;
+      line-height: 24px;
+      color: #2C435A;
+      }
+      .Nouveau_mp .input-group{
+    margin-left: 50px;
+    margin-top: 295px ;
+  }
+  .Nouveau_mp .input-field-email{
+    margin: 55px 0;
+  }
+  .Nouveau_mp  input{
+   width: 520px;
+   height: 50px;
+   border-radius: 4px;
+   border: 2px solid #E2E8F0;
+   padding-left: 23px;
+   outline: none;
+  }
+  .Nouveau_mp input::placeholder {
+    color:  #B6B6B6;;
+    font-weight: 400;
+    font-size:15px;
+    line-height: 24px;
+    font-family: 'Bahnschrift';
+    font-style: normal;
+    outline: none;
+    animation:slideRight 1s ease forwards ;
+    animation-delay: 1s;
+  }
+  .Nouveau_mp .btn-field{
+  display: flex;
+  justify-content: space-between;
+ }
+ .Nouveau_mp .btn-field button{
+  width: 190px;
+  height: 55px;
+  margin-left: 215px;
+  margin-top: 65px;
+  color: white;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 24px;
+  text-align: center;
+  background: #FF3548;
+  border-radius: 6px;
+  border: 0;
+  font-family: 'Bahnschrift';
+    font-style: normal;
+  cursor: pointer;
+  transition: background 1s;
+ }
+ .Nouveau_mp .btn-field button :hover{
+  background-color: #193047;
+ }
+  
