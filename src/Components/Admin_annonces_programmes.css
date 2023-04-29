@@ -1,0 +1,30 @@
+.ajouter_annonce_button{
+  margin-left: 1000px;
+  margin-top: 30px;
+  width: 222px;
+  height: 50px;
+  background-color: #FF3548;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.ajouter_programme_button{
+  margin-left: 700px;
+  margin-top: 30px;
+  width: 222px;
+  height: 50px;
+  background-color: #FF3548;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.margin_employee_page{
+  margin-top: 60px;
+  margin-left: 300px;
+}

@@ -11,6 +11,7 @@ import Hero from './Components/hero';
 import Contact_admin from './Components/Contact_admin';
 import Afficher_employees from './Components/Afficher_employees';
 import Employee_annonces_programmes from './Components/Employee_annonces_programmes';
+import Admin_annonces_programmes from './Components/Admin_annonces_programmes';
 import Registration from './Components/Registration';
 import Email_modifier_mp from './Components/Email_modifier_mp';
 import Envoyer_lien_mp from './Components/Envoyer_lien_mp';
@@ -18,6 +19,16 @@ import Nouveau_mp from './Components/Nouveau_mp';
 
 
 const routes = [
+
+  {
+    path: "/Admin_annonces_programmes",
+    element: (
+      <div>
+          <Admin_annonces_programmes/>
+          
+      </div>
+    )
+  },
 
   {
     path: "/Nouveau_mp",
