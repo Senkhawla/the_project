@@ -2,8 +2,10 @@ import banner from '../assets/img/banner.jpg';
 import overlay from '../assets/img/overlay.png';
 import logoesi from '../assets/img/logoesi.png';
 import './Nouveau_mp.css';
+import { useNavigate } from 'react-router-dom';
 
 function Nouveau_mp() {
+    const navigate = useNavigate();
   return (
     <div className='Nouveau_mp'>
       <h1>Tapez le nouveau mot de passe</h1>
@@ -20,7 +22,7 @@ function Nouveau_mp() {
        
        
        <div class="btn-field"> 
-       <button type='button'>Submit</button>
+       <button type='button' onClick={()=>{navigate('/Login');}} >Submit</button>
        </div>
        <div className='logoesi'>
        <img src={logoesi} alt = 'logoesi img'/>
