@@ -9,16 +9,30 @@ import Contact from './Components/Contacts';
 import Navbar from './Components/Navbar';
 import Hero from './Components/hero';
 import Contact_admin from './Components/Contact_admin';
-import Afficher_employees from './Components/Afficher_employees';
 import Employee_annonces_programmes from './Components/Employee_annonces_programmes';
 import Admin_annonces_programmes from './Components/Admin_annonces_programmes';
 import Registration from './Components/Registration';
 import Email_modifier_mp from './Components/Email_modifier_mp';
 import Envoyer_lien_mp from './Components/Envoyer_lien_mp';
 import Nouveau_mp from './Components/Nouveau_mp';
+import Table_employee from './Components/Table_employee';
 
 
 const routes = [
+
+  {
+    path: "/Employees",
+    element: (
+      <div>
+         <div className="container">
+        <Sidebar/> 
+        <div className="margin">
+          <Table_employee/>
+        </div>
+      </div>
+      </div>
+    )
+  },
 
   {
     path: "/Admin_annonces_programmes",
@@ -112,15 +126,6 @@ const routes = [
       <div className="App">
         <Contact_admin/>
       </div>
-    )
-  },
-
-  {
-    path: "/Employees",
-    element: (
-          <div >
-          <Afficher_employees/>
-          </div>
     )
   },
 

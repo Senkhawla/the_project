@@ -11,8 +11,6 @@ const Annonces_list = () => {
 <h1>NOS ANNONCES</h1>
     <div className="annonces-container">
 
-     
-
       {Annonces_list_data.map((annonce) => (
         <div
           key={annonce.id}
