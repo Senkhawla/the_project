@@ -18,9 +18,39 @@ import Nouveau_mp from './Components/Nouveau_mp';
 import Table_employee from './Components/Table_employee';
 import Ajouter_au_programme from './Components/Ajouter_au_programme';
 import Modifier_service_programme from './Components/Modifier_programme';
+import Modifier_annonce from './Components/Modifier_annonce';
+import Ajouter_annonce from './Components/Ajouter_annonce';
 
 
 const routes = [
+
+  {
+    path: "/Ajouter_annonce",
+    element: (
+      <div>
+         <div className="container">
+        
+        
+          <Ajouter_annonce/>
+        
+      </div>
+      </div>
+    )
+  },
+ 
+  {
+    path: "/Modifier_annonce",
+    element: (
+      <div>
+         <div className="container">
+        
+        
+          <Modifier_annonce/>
+        
+      </div>
+      </div>
+    )
+  },
 
   {
     path: "/Modifier_service_programme",

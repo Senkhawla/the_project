@@ -12,7 +12,7 @@ const Employee_annonces_programmes =() =>{
     <div className="container">
       <Sidebar/> 
       </div>
-      <button className="ajouter_annonce_button" > Ajouter une annonce </button>
+      <button className="ajouter_annonce_button" onClick={() => navigate('/Ajouter_annonce')}> Ajouter une annonce </button>
       <div className="margin_employee_page">
      < Annonces_list/>
      <button className="ajouter_programme_button" onClick={() => navigate('/Ajouter_au_programme')} > Ajouter aux programme </button>
