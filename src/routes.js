@@ -16,9 +16,38 @@ import Email_modifier_mp from './Components/Email_modifier_mp';
 import Envoyer_lien_mp from './Components/Envoyer_lien_mp';
 import Nouveau_mp from './Components/Nouveau_mp';
 import Table_employee from './Components/Table_employee';
+import Ajouter_au_programme from './Components/Ajouter_au_programme';
+import Modifier_service_programme from './Components/Modifier_programme';
 
 
 const routes = [
+
+  {
+    path: "/Modifier_service_programme",
+    element: (
+      <div>
+         <div className="container">
+        
+        
+          <Modifier_service_programme/>
+        
+      </div>
+      </div>
+    )
+  },
+
+  {
+    path: "/Ajouter_au_programme",
+    element: (
+      <div>
+         <div className="container">
+        
+          <Ajouter_au_programme/>
+        
+      </div>
+      </div>
+    )
+  },
 
   {
     path: "/Employees",
